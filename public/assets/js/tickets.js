@@ -183,10 +183,15 @@ $(document).ready(() => {
       .children("option:selected")
       .text()
       .trim();
+    console.log("email :", CustomerEmail);
     var ticketTitle = $("#ticket-title").val().trim();
     var ticketText = $("#ticket-text").val().trim();
 
-    if (CustomerEmail !== "" && ticketTitle !== "" && ticketText !== "") {
+    if (
+      CustomerEmail !== "Choose..." &&
+      ticketTitle !== "" &&
+      ticketText !== ""
+    ) {
       var NewTicekt = {
         CustomerEmail: CustomerEmail,
         ticketTitle: ticketTitle,
