@@ -1,0 +1,86 @@
+<div class="wrapper">
+    {{> navbar/nav-block}}
+
+    <div class="content" id="ticket">
+        <h2 class="display-4"> <i class="fas fa-inbox"></i> TICKETS</h2>
+
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="allTickets-tab" data-toggle="tab" href="#allTickets" role="tab"
+                    aria-controls="allTickets" aria-selected="true">All Tickets</a>
+            </li>
+            <li class="nav-item" id="openTic">
+                <a class="nav-link" id="openTickets-tab" data-toggle="tab" href="#allTickets" role="tab"
+                    aria-controls="openTickets" aria-selected="false">Open Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="closedTickets-tab" data-toggle="tab" href="#allTickets" role="tab"
+                    aria-controls="closedTickets" aria-selected="false">Closed Tickets</a>
+            </li>
+            <li class="nav-item ">
+                <form class="form-inline ml-3">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </li>
+
+        </ul>
+        <button class="btn btn-info my-2" id="create_ticket" data-toggle="modal" data-target=".bd-example-modal-lg"><i
+                class="far fa-plus-square"></i> Create Ticket</button>
+        <div class="tab-content">
+            <div class="tab-pane active" id="allTickets" role="tabpanel" aria-labelledby="allTickets-tab">
+                <div class="row clculate">
+                    {{!-- smallTickets --}}
+                    <div class="col-md-4">
+                        <div class="row smallT_cont">
+
+                        </div>
+
+                    </div>
+                    {{!-- bigTickets --}}
+                    <div class="col-md-8 big_ticket_sec">
+                        <div class="card big_ticket" id="">
+
+                            <h5 style="padding:1.25rem">
+                                <div class="float-right ticketDate"></div>
+                            </h5>
+                            <div class="card-body">
+                                <a href="#" class="activate">
+                                    <div class="avatar" style="background-color: rgb(220, 42, 42);"></div>
+                                </a>
+                                {{!-- Customer first name & last name --}}
+                                <h2 style="display:inline-block"></h2>
+                                {{!-- ticket title --}}
+                                <h4></h4>
+                                {{!-- ticket text --}}
+                                <p id="bigTextArea" style="color: #534366;font-weight: bold;"></p>
+                                <div id="commentsArea"></div>
+                                <button class="btn btn-outline-info" id="reply" style="float:right" ticketid="100"
+                                    disabled="true">reply</button>
+                                <button class="btn btn-outline-danger mr-2" id="close_ticket" style="float:right">Close
+                                    Ticket</button>
+                                <span id="ticket_closeMsg" class="float-right mr-2"></span>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="openTickets" role="tabpanel" aria-labelledby="openTickets-tab">Open</div>
+            <div class="tab-pane" id="closedTickets" role="tabpanel" aria-labelledby="closedTickets-tab">Closed</div>
+        </div>
+
+    </div>
+</div>
+
+{{> createTicket/create-block}}
+
+{{> call/call-block}}
+{{> AddComment/add-comment}}
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//media.twiliocdn.com/sdk/js/client/v1.7/twilio.min.js"></script>
+<script src="/assets/js/voice.js"></script>
+<script src="/assets/js/tickets.js"></script>

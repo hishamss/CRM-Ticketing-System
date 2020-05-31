@@ -25,9 +25,11 @@
 
 
 
-        <h3>{{currentUser}}</h3>
+        <h3> <span class="upperCase">{{userFirstName}}</span>
+            <span class="upperCase">{{userLastName}}</span></h3>
         <div id="jobTitle">Customer Support Specialist</div>
-        <strong>{{currentUser.[0]}} </strong>
+        <strong>{{userFirstName.[0]}}{{userLastName.[0]}}
+        </strong>
 
     </div>
 
@@ -48,7 +50,7 @@
             </a>
         </li>
         <li>
-            <a href="/ticket" id="ticketBtn">
+            <a href="/tickets" id="ticketBtn">
                 <i class="fas fa-inbox"></i>
                 <span class="btnName">Tickets</span>
             </a>

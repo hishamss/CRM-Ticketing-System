@@ -1,5 +1,4 @@
-<div class="modal call_modal fade bd-example-modal-sm" id="exampleModalCenter" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal call_modal fade bd-example-modal-sm">
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content call-modal">
             <div class="modal-header">
@@ -9,15 +8,18 @@
                 </button>
             </div>
             <div class="modal-body text-center">
+                <div id="CustomerName">
+                    <h3 class="modalAv avatar">CD</h3>
+                    <h3><span class="upperCase customerFirstNameCall" id=""></span>
+                        <span class="upperCase customerLastNameCall" id=""></span></h3>
+                </div>
 
-                <h3 class="modalAv avatar">CD</h3>
-                <h3>Cathy Dates</h3>
 
-                <p class="text-lighjt">cathydates@gmail.com</p>
+                <p class="text-lighjt" id="customerEmail"></p>
                 <p id="logMsg"></p>
                 <div class="mb-2">
                     <button type="button" id="call" class="btn btn-outline-light mb-3">
-                        Call 5045154776
+                        <i class="fas fa-phone"></i>
                     </button>
                     <button type="button" id="hangup" class="btn btn-danger" data-dismiss="modal" aria-label="Close"
                         style="display: none;">

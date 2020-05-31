@@ -1,68 +1,98 @@
 <div class="wrapper">
     {{> navbar/nav-block}}
 
-    <div class="content" id="contacts">
+    <div class="content" id="contact">
+        {{!-- <a href="" class="customerBtn activate" data-toggle="modal" data-target="#exampleModalCenter">
+            <div class="avatar">CD</div>
+        </a> --}}
 
 
         <h2 class="display-4"><i class="fas fa-address-card"></i> Contacts</h2>
         <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="Specialists-tab" data-toggle="tab" href="#Specialists" role="tab"
-                    aria-controls="Specialists" aria-selected="true">Specialists</a>
+                <a class="nav-link" id="Customers-tab" data-toggle="tab" href="#Customers" role="tab"
+                    aria-controls="Customers" aria-selected="true">Customers</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="Customers-tab" data-toggle="tab" href="#Customers" role="tab"
-                    aria-controls="Customers" aria-selected="false">Customers</a>
+                <a class="nav-link active" id="Specialists-tab" data-toggle="tab" href="#Specialists" role="tab"
+                    aria-controls="Specialists" aria-selected="false">Specialists</a>
             </li>
+
         </ul>
 
         <div class="tab-content">
             <div class="tab-pane active" id="Specialists" role="tabpanel" aria-labelledby="Specialists-tab"><br>
-                <table class="table table-hover">
-                    <thead style="background-color:#7a6eb8" class="text-light">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody id="Specialists_table">
+                <div class="table-responsive-sm">
+                    <table class="table table-hover">
+                        <thead style="background-color:#7a6eb8" class="text-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Specialists_table">
 
-                    </tbody>
+                        </tbody>
 
-                </table>
+                    </table>
+                </div>
+
+
             </div>
+
+
+
+
+
+
             <div class="tab-pane" id="Customers" role="tabpanel" aria-labelledby="Customers-tab"><br>
-                <button class="btn btn-info mb-2" data-toggle="modal" data-target=".bd-example-modal-lg1">
-                    <i class="far fa-plus-square"></i> New Customer
+                <button class="btn btn-primary mb-2" data-toggle="modal" data-target=".bd-example-modal-lg1">
+                    <i class="fas fa-user-friends"></i> Add Customer
                 </button>
+                <button class="btn btn-info mb-2" id="create_ticket" data-toggle="modal"
+                    data-target=".bd-example-modal-lg"><i class="far fa-plus-square"></i> Create Ticket</button>
                 <br>
-                <table class="table table-hover">
-                    <thead style="background-color:#7a6eb8" class="text-light">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">City</th>
-                            <th scope="col">State</th>
-                            <th scope="col">Zip Code</th>
+                <div class="table-responsive-sm">
+                    <table class="table table-hover">
+                        <thead style="background-color:#7a6eb8" class="text-light">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">City</th>
+                                <th scope="col">State</th>
+                                <th scope="col">Zip Code</th>
+                                <th scope="col"></th>
 
 
-                        </tr>
-                    </thead>
-                    <tbody id="Customers_table">
 
-                    </tbody>
+                            </tr>
+                        </thead>
+                        <tbody id="Customers_table">
 
-                </table>
+                        </tbody>
+
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+{{> createTicket/create-block}}
+
+
 
 {{> AddCustomer/Add-block}}
+
+
+
+{{> call/call-block}}
+
+<script src="/assets/js/voice.js"></script>
 <script src="/assets/js/contacts.js"></script>
+<script src="/assets/js/tickets.js"></script>

@@ -6,148 +6,294 @@
     <div class="content" id="home">
 
 
-        <h1 class="display-5"> Welcome to Dashboard</h1>
-
-        <div class="line"></div>
 
 
-        {{!-- <div class="row">
-            <div class="col"> <img src="https://apexcharts.com/wp-content/uploads/2018/05/simple-donut-chart.svg"
-                    alt=""></div>
-            <div class="col"> <img src="https://apexcharts.com/wp-content/uploads/2018/05/simple-donut-chart.svg"
-                    alt=""></div>
+        <div class="row">
+            <div class="col-10">
+                <div class="jumbotron" id="welcomeBack">
+                    <div class="container">
 
-
-        </div> --}}
-
-
-        {{!-- <div class="row">
-            <div class="col">
-                <div class="text-center p-0" id="grad1">
-                    <h1><i class="fas fa-envelope-open-text"></i></h1>
-                </div>
-            </div>
-         
-
-
-        </div> --}}
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card text-white bg-info mb-3 analytics" id="grad1">
-
-                        <div class="card-body">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3>2345</h3>
-                                    <h6 class="mt-0 mb-1">Total Revenue</h6>
-
-                                </div>
-                                <h3 class="align-self-center">
-                                    <i class="fas fa-chart-pie"></i>
-                                </h3>
+                        <div class="row">
+                            <div class="col-9">
+                                <h1 style="font-weight: 600;" class="display-4 text-white"> Hello,
+                                    <span class="upperCase">{{userFirstName}}</span>
+                                    <span class="upperCase">{{userLastName}}</span>!
+                                </h1>
+                                <p class="lead text-dark">Welcome back to your Impact X dashboard.
+                                </p>
                             </div>
 
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card text-white bg-info mb-3 analytics" id="grad2">
+                            <div class="col align-self-end">
+                                <p id="todaysDate" style="font-weight: 400;" class="text-light"></p>
 
-                        <div class="card-body">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3>2345</h3>
-                                    <h6 class="mt-0 mb-1">Total Revenue</h6>
-
-                                </div>
-                                <h3 class="align-self-center ml-2">
-                                    <i class="fas fa-chart-pie"></i>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card text-white bg-info mb-3 analytics" id="grad3">
-
-                        <div class="card-body">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3>2345</h3>
-                                    <h6 class="mt-0 mb-1">Total Revenue</h6>
-
-                                </div>
-                                <h3 class="align-self-center">
-                                    <i class="fas fa-chart-pie"></i>
-                                </h3>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card text-white bg-info mb-3 analytics" id="grad4">
-
-                        <div class="card-body">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h3>2345</h3>
-                                    <h6 class="mt-0 mb-1">Total Revenue</h6>
-
-                                </div>
-                                <h3 class="align-self-center">
-                                    <i class="fas fa-chart-pie"></i>
-                                </h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <div class="mt-3" id="chartContainer1" style="height: 370px; width: 100%;"></div>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+
 
         <div class="line"></div>
+
 
         <div class="row">
             <div class="col">
-                <div id="chartContainer" style="height: 370px; width: 50%;"></div>
+                <div class="row">
+
+                    <div class="col">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Recently Contacted Customers</h5>
+
+                            </div>
+                            <ul class="list-group list-group-flush" style="border: none;">
+                                <li class="list-group-item">
+
+                                    <div class="media">
+
+                                        <a href="" class="customerBtn activate" data-toggle="modal"
+                                            data-target="#exampleModalCenter">
+                                            <div class="avatar" style="background-color:rgb(220, 42, 42);">WM</div>
+                                        </a>
+
+                                        <div class="media-body">
+
+                                            <h6 class="mt-3 ml-3" id="customerName">
+                                                Waylon Morris</h6>
+
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li class="list-group-item">
+
+                                    <div class="media">
+
+                                        <a href="" class="customerBtn activate" data-toggle="modal"
+                                            data-target="#exampleModalCenter">
+                                            <div class="avatar" style="background-color:rgb(220, 42, 42);">BG</div>
+                                        </a>
+
+                                        <div class="media-body">
+
+                                            <h6 class="mt-3 ml-3" id="customerName">
+                                                Beatriz Griffins</h6>
+
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li class="list-group-item">
+
+                                    <div class="media">
+
+                                        <a href="" class="customerBtn activate" data-toggle="modal"
+                                            data-target="#exampleModalCenter">
+                                            <div class="avatar" style="background-color:rgb(220, 42, 42);">AS</div>
+                                        </a>
+
+                                        <div class="media-body">
+
+                                            <h6 class="mt-3 ml-3" id="customerName">
+                                                Angela Singh</h6>
+
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li class="list-group-item">
+
+                                    <div class="media">
+
+                                        <a href="" class="customerBtn activate" data-toggle="modal"
+                                            data-target="#exampleModalCenter">
+                                            <div class="avatar" style="background-color:rgb(220, 42, 42);">BM</div>
+                                        </a>
+
+                                        <div class="media-body">
+
+                                            <h6 class="mt-3 ml-3" id="customerName">
+                                                Doyle Mendozas</h6>
+
+                                        </div>
+                                    </div>
+
+                                </li>
+
+                            </ul>
+                            <div class="card-body">
+                                <a style="float: right; color:blue" href="/contacts" class="card-link">View Contacts</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container col">
+                        <div class="card">
+                            <div class="row justify-content-center">
+
+                                <div class="col text-center jus">
+
+                                    <button class="btn btn-outline-info" id="previous" onclick="previous()"><i
+                                            class="fas fa-arrow-left"></i></button>
+                                    <span>
+                                        <h4 class="mx-3" id="monthAndYear"></h4>
+                                    </span>
+
+                                    <button class="btn btn-outline-info" id="next" onclick="next()"><i
+                                            class="fas fa-arrow-right"></i></button>
+
+                                </div>
+
+                            </div>
+
+                            <table class="table table-bordered table-responsive-sm" id="calendar">
+                                <thead>
+                                    <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="calendar-body">
+
+                                </tbody>
+                            </table>
+
+                            <br />
+                            <form class="form-inline" hidden>
+                                <label class="lead mr-2 ml-2" for="month">Jump To: </label>
+                                <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                                    <option value=0>Jan</option>
+                                    <option value=1>Feb</option>
+                                    <option value=2>Mar</option>
+                                    <option value=3>Apr</option>
+                                    <option value=4>May</option>
+                                    <option value=5>Jun</option>
+                                    <option value=6>Jul</option>
+                                    <option value=7>Aug</option>
+                                    <option value=8>Sep</option>
+                                    <option value=9>Oct</option>
+                                    <option value=10>Nov</option>
+                                    <option value=11>Dec</option>
+                                </select>
+
+
+                                <label for="year"></label><select class="form-control col-sm-4" name="year" id="year"
+                                    onchange="jump()">
+                                    <option value=2020>2020</option>
+                                    <option value=2021>2021</option>
+                                    <option value=2022>2022</option>
+                                    <option value=2023>2023</option>
+                                    <option value=2024>2024</option>
+                                    <option value=2025>2025</option>
+                                    <option value=2026>2026</option>
+                                    <option value=2027>2027</option>
+                                    <option value=2028>2028</option>
+                                    <option value=2029>2029</option>
+                                    <option value=2030>2030</option>
+                                </select></form>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="col">
-                <div id="chartContainer3" style="height: 370px; width: 50%;"></div>
+            <div class="col-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="card text-white bg-info mb-3 analytics" id="grad1">
+
+                                <div class="card-body">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h3 id="totalTickts">0</h3>
+                                            <h6 class="mt-0 mb-1">Total Tickets</h6>
+
+                                        </div>
+                                        <h2 class="align-self-center">
+                                            <i class="fas fa-inbox"></i>
+                                        </h2>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <div class="card text-white bg-info mb-3 analytics" id="grad2">
+
+                                <div class="card-body">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h3 id="customerCount">2345</h3>
+                                            <h6 class="mt-0 mb-1">Total # of Customers</h6>
+
+                                        </div>
+                                        <h2 class="align-self-center ml-2">
+                                            <i class="fas fa-address-card"></i>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+
+                        <div class="col">
+                            <div class="card text-white bg-info mb-3 analytics" id="grad3">
+
+                                <div class="card-body">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h3 id="openTicketCount">2345</h3>
+                                            <h6 class="mt-0 mb-1">Total Open Tickets</h6>
+
+                                        </div>
+                                        <h2 class="align-self-center">
+                                            <i class="fas fa-envelope-open-text"></i>
+                                        </h2>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                            <div class="card text-white bg-info mb-3 analytics" id="grad4">
+
+                                <div class="card-body">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h3 id="closedTicketCount">2345</h3>
+                                            <h6 class="mt-0 mb-1">Total Closed Tickets</h6>
+
+                                        </div>
+                                        <h2 class="align-self-center">
+                                            <i class="fas fa-envelope"></i>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
+
 
 
 
@@ -161,168 +307,20 @@
 
 </div>
 
+<style>
+
+
+</style>
+
+
+{{> call/call-block}}
+
+
+<script src="/assets/js/dash.js"></script>
+
+<script src="/assets/js/voice.js"></script>
 
 
 
 
-<script>
-    window.onload = function () {
-
-        var chart1 = new CanvasJS.Chart("chartContainer1", {
-            animationEnabled: true,
-            theme: "light2", // "light1", "light2", "dark1", "dark2"
-            title: {
-                text: "Top Sales Helpers"
-            },
-            axisY: {
-                title: "Goals(SHG)"
-            },
-            data: [{
-                type: "column",
-                showInLegend: true,
-                legendMarkerColor: "grey",
-                legendText: "SHG = Sales Helper Goals",
-                dataPoints: [
-                    { y: 300878, label: "Bob" },
-                    { y: 266455, label: "Sandy" },
-                    { y: 169709, label: "Carol" },
-                    { y: 158400, label: "Trisha" },
-                    { y: 142503, label: "Fabio" },
-                    { y: 101500, label: "Patrick" },
-                    { y: 97800, label: "Adein" },
-                    { y: 80000, label: "Liana" }
-                ]
-            }]
-        });
-        chart1.render();
-
-        var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            title: {
-                text: "Desktop Search Engine Market Share - 2016"
-            },
-            data: [{
-                type: "pie",
-                startAngle: 240,
-                yValueFormatString: "##0.00\"%\"",
-                indexLabel: "{label} {y}",
-                dataPoints: [
-                    { y: 79.45, label: "Google" },
-                    { y: 7.31, label: "Bing" },
-                    { y: 7.06, label: "Baidu" },
-                    { y: 4.91, label: "Yahoo" },
-                    { y: 1.26, label: "Others" }
-                ]
-            }]
-        });
-        chart.render();
-
-        var chart3 = new CanvasJS.Chart("chartContainer3", {
-            animationEnabled: true,
-            title: {
-                text: "Monthly Expenses, 2016-17"
-            },
-            axisY: {
-                includeZero: false,
-                prefix: "$"
-            },
-            toolTip: {
-                shared: true
-            },
-            legend: {
-                fontSize: 13
-            },
-            data: [{
-                type: "splineArea",
-                showInLegend: true,
-                name: "Salaries",
-                yValueFormatString: "$#,##0",
-                xValueFormatString: "MMM YYYY",
-                dataPoints: [
-                    { x: new Date(2016, 2), y: 30000 },
-                    { x: new Date(2016, 3), y: 35000 },
-                    { x: new Date(2016, 4), y: 30000 },
-                    { x: new Date(2016, 5), y: 30400 },
-                    { x: new Date(2016, 6), y: 20900 },
-                    { x: new Date(2016, 7), y: 31000 },
-                    { x: new Date(2016, 8), y: 30200 },
-                    { x: new Date(2016, 9), y: 30000 },
-                    { x: new Date(2016, 10), y: 33000 },
-                    { x: new Date(2016, 11), y: 38000 },
-                    { x: new Date(2017, 0), y: 38900 },
-                    { x: new Date(2017, 1), y: 39000 }
-                ]
-            },
-            {
-                type: "splineArea",
-                showInLegend: true,
-                name: "Office Cost",
-                yValueFormatString: "$#,##0",
-                dataPoints: [
-                    { x: new Date(2016, 2), y: 20100 },
-                    { x: new Date(2016, 3), y: 16000 },
-                    { x: new Date(2016, 4), y: 14000 },
-                    { x: new Date(2016, 5), y: 18000 },
-                    { x: new Date(2016, 6), y: 18000 },
-                    { x: new Date(2016, 7), y: 21000 },
-                    { x: new Date(2016, 8), y: 22000 },
-                    { x: new Date(2016, 9), y: 25000 },
-                    { x: new Date(2016, 10), y: 23000 },
-                    { x: new Date(2016, 11), y: 25000 },
-                    { x: new Date(2017, 0), y: 26000 },
-                    { x: new Date(2017, 1), y: 25000 }
-                ]
-            },
-            {
-                type: "splineArea",
-                showInLegend: true,
-                name: "Entertainment",
-                yValueFormatString: "$#,##0",
-                dataPoints: [
-                    { x: new Date(2016, 2), y: 10100 },
-                    { x: new Date(2016, 3), y: 6000 },
-                    { x: new Date(2016, 4), y: 3400 },
-                    { x: new Date(2016, 5), y: 4000 },
-                    { x: new Date(2016, 6), y: 9000 },
-                    { x: new Date(2016, 7), y: 3900 },
-                    { x: new Date(2016, 8), y: 4200 },
-                    { x: new Date(2016, 9), y: 5000 },
-                    { x: new Date(2016, 10), y: 14300 },
-                    { x: new Date(2016, 11), y: 12300 },
-                    { x: new Date(2017, 0), y: 8300 },
-                    { x: new Date(2017, 1), y: 6300 }
-                ]
-            },
-            {
-                type: "splineArea",
-                showInLegend: true,
-                yValueFormatString: "$#,##0",
-                name: "Maintenance",
-                dataPoints: [
-                    { x: new Date(2016, 2), y: 1700 },
-                    { x: new Date(2016, 3), y: 2600 },
-                    { x: new Date(2016, 4), y: 1000 },
-                    { x: new Date(2016, 5), y: 1400 },
-                    { x: new Date(2016, 6), y: 900 },
-                    { x: new Date(2016, 7), y: 1000 },
-                    { x: new Date(2016, 8), y: 1200 },
-                    { x: new Date(2016, 9), y: 5000 },
-                    { x: new Date(2016, 10), y: 1300 },
-                    { x: new Date(2016, 11), y: 2300 },
-                    { x: new Date(2017, 0), y: 2800 },
-                    { x: new Date(2017, 1), y: 1300 }
-                ]
-            }]
-        });
-        chart3.render();
-
-    }
-
-
-
-
-</script>
-
-
-
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>

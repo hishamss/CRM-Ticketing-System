@@ -146,6 +146,164 @@ module.exports = function (
     }
   });
 
+  app.post("/addNote", isAuthenticatedMiddleware(), async (req, res) => {
+    console.log("//////////////Adding Comments");
+    db.Comments.create({
+      UserId: req.user.id,
+      TicketId: req.body.TicketId,
+      commentText: req.body.commentText,
+    })
+      .then(() => {
+        res.send(true);
+      })
+      .catch((err) => {
+        console.log("error in adding comment: ", err);
+        res.send(false);
+      });
+  });
+
+  app.get("/allTickets", isAuthenticatedMiddleware(), async (req, res) => {
+    db.Tickets.findAll({
+      where: { UserId: req.user.id },
+      attributes: ["id", "ticketTitle", "ticketText", "status", "createdAt"],
+      include: [
+        {
+          model: db.Customers,
+          attributes: ["firstName", "lastName"],
+        },
+      ],
+    })
+      .then((result) => {
+        var resArray = [];
+        for (row of result) {
+          resArray.push(row.dataValues);
+        }
+        res.send(resArray);
+      })
+      .catch((error) => {
+        console.log("/////feching all tickets Error: ", error);
+        res.status(500).end();
+      });
+  });
+
+  app.get(
+    "/ticket_comments/:id",
+    isAuthenticatedMiddleware(),
+    async (req, res) => {
+      db.Comments.findAll({
+        attributes: ["commentText", "createdAt"],
+        where: { TicketId: req.params.id },
+      })
+        .then((result) => {
+          var resArray = [];
+          for (row of result) {
+            resArray.push({ comment: row.commentText, date: row.createdAt });
+          }
+          res.json(resArray);
+        })
+        .catch((err) => {
+          res.status(500).end();
+        });
+    }
+  );
+
+  app.get("/all_Customers", isAuthenticatedMiddleware(), async (req, res) => {
+    db.Customers.findAll({
+      where: { UserId: req.user.id },
+    })
+      .then((result) => {
+        resArray = [];
+        for (row of result) {
+          resArray.push(row.dataValues.email);
+        }
+        res.send(resArray);
+      })
+      .catch(() => {
+        res.status(500).end();
+      });
+  });
+
+  app.get("/statistics", isAuthenticatedMiddleware(), async (req, res) => {
+    console.log("/////////statistics////////");
+    db.Tickets.findAll({
+      where: { UserId: req.user.id },
+    })
+      .then((results) => {
+        var OpenCount = 0;
+        var ClosedCount = 0;
+        var tickets;
+        for (row of results) {
+          tickets = results.length;
+          if (row.dataValues.status === "open") {
+            OpenCount++;
+          } else {
+            ClosedCount++;
+          }
+        }
+        db.Customers.findAll({
+          where: { UserId: req.user.id },
+        })
+          .then((result) => {
+            res.json({
+              tickets: tickets,
+              open: OpenCount,
+              closed: ClosedCount,
+              Customers: result.length,
+            });
+          })
+          .catch(() => {
+            res.status(500).end();
+          });
+      })
+      .catch((err) => {
+        console.log("errror :", err);
+        res.status(500).end();
+      });
+  });
+
+  app.post("/Newticket", isAuthenticatedMiddleware(), async (req, res) => {
+    db.Customers.findOne({
+      where: { email: req.body.CustomerEmail },
+    })
+      .then((result) => {
+        db.Tickets.create({
+          ticketTitle: req.body.ticketTitle,
+          ticketText: req.body.ticketText,
+          status: "open",
+          CustomerId: result.dataValues.id,
+          UserId: req.user.id,
+        })
+          .then(() => {
+            res.send(true);
+          })
+          .catch((err) => {
+            console.log("New ticket err :", err);
+            res.send(false);
+          });
+      })
+      .catch((err) => {
+        console.log("New ticket error :", err);
+        res.status(500).end();
+      });
+  });
+
+  app.post("/closeTicket", isAuthenticatedMiddleware(), async (req, res) => {
+    db.Tickets.update(
+      {
+        status: "closed",
+      },
+      {
+        where: { id: req.body.id },
+      }
+    )
+      .then(() => {
+        res.send(true);
+      })
+      .catch(() => {
+        res.send(false);
+      });
+  });
+
   app.post("/upload", isAuthenticatedMiddleware(), async (req, res) => {
     console.log("///////////upload:");
     db.Users.findOne({
@@ -343,23 +501,5 @@ module.exports = function (
           ? res.send("User Already Exists!!")
           : res.send(false);
       });
-
-    //       .catch((err) => {
-    //         console.log(err);
-    //         err.errors[0].message.includes("username must be unique")
-    //           ? res.send("User Already Exists!!")
-    //           : res.send(false);
-    //       });
-    //   } catch {
-    //     res.status(500).end();
-    //   }
-    // } else {
-    //   res.redirect("/");
-    // }
-    // });
-
-    // .catch(() => {
-    //   res.send(false);
-    // });
   });
 };

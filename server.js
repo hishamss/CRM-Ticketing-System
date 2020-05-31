@@ -14,17 +14,17 @@ app.use(express.json());
 
 // include session middleware
 app.use(
-    session({
-        secret: "keboard cat",
-        store: new SequelizeStore({
-            db: db.sequelize,
-        }),
-        resave: false,
-        saveUninitialized: false,
-        // set the idel time for 5 min before logging out the user
-        cookie: { maxAge: 300000 },
-        rolling: true,
-    })
+  session({
+    secret: "keboard cat",
+    store: new SequelizeStore({
+      db: db.sequelize,
+    }),
+    resave: false,
+    saveUninitialized: false,
+    // set the idel time for 5 min before logging out the user
+    cookie: { maxAge: 300000 },
+    rolling: true,
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -38,44 +38,44 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 
 require("./routes/api-routes")(
-    app,
-    passport,
-    isAuthenticatedMiddleware,
-    isNotAuthenticatedMiddleware
+  app,
+  passport,
+  isAuthenticatedMiddleware,
+  isNotAuthenticatedMiddleware
 );
 
 require("./routes/html-routes")(
-    app,
-    isAuthenticatedMiddleware,
-    isNotAuthenticatedMiddleware
+  app,
+  isAuthenticatedMiddleware,
+  isNotAuthenticatedMiddleware
 );
 // Add User Restriction
 function isAuthenticatedMiddleware() {
-    return (req, res, next) => {
-        // console.log(
-        //   `req.session.passport.user: ${JSON.stringify(req.session.passport)}`
-        // );
+  return (req, res, next) => {
+    // console.log(
+    //   `req.session.passport.user: ${JSON.stringify(req.session.passport)}`
+    // );
 
-        if (req.isAuthenticated()) return next();
-        res.redirect("/login");
-    };
+    if (req.isAuthenticated()) return next();
+    res.redirect("/login");
+  };
 }
 
 function isNotAuthenticatedMiddleware() {
-    return (req, res, next) => {
-        // console.log(
-        //   `req.session.passport.user: ${JSON.stringify(req.session.passport)}`
-        // );
+  return (req, res, next) => {
+    // console.log(
+    //   `req.session.passport.user: ${JSON.stringify(req.session.passport)}`
+    // );
 
-        if (!req.isAuthenticated()) return next();
-        res.redirect("/");
-    };
+    if (!req.isAuthenticated()) return next();
+    res.redirect("/");
+  };
 }
 // { force: true }
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync().then(() => {
-    app.listen(PORT, function() {
-        // Log (server-side) when our server has started
-        console.log("Server listening on: http://localhost:" + PORT);
-    });
+  app.listen(PORT, function () {
+    // Log (server-side) when our server has started
+    console.log("Server listening on: http://localhost:" + PORT);
+  });
 });

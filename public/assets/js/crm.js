@@ -6,25 +6,22 @@ $(document).ready(function () {
   //   console.log(width);
   // });
 
-  // $("#sidebar").hover(function () {
-  //   $("#sidebar").toggleClass("active");
-  //   var width = $("#sidebar").css("width");
-
-  //   console.log(width);
-
-  //   if (width === "90px") {
-  //     setTimeout(() => {
-  //       $("#brandName").show();
-  //       $("#profileImage").show();
-  //       $("#jobTitle").show();
-  //       $(".sidebar-header h3").fadeIn(100);
-  //     });
-  //   } else {
-  //     $("#brandName").hide();
-  //     $("#profileImage").hide();
-  //     $("#jobTitle").hide();
-  //     $(".sidebar-header h3").hide();
-  //   }
+  // $.get("/allSpecialists", (result) => {
+  //   var firstName = result[0].firstName;
+  //   var lastName = result[0].lastName;
+  //   // console.log($(this.result));
+  //   $(".userFirstName").text("");
+  //   $(".userFirstName").append(`
+  //   ${firstName}
+  //       `);
+  //   $(".userLastName").text("");
+  //   $(".userLastName").append(`
+  //   ${lastName}
+  //       `);
+  //   $("#initals").text("");
+  //   $("#initals").append(`
+  //      ${firstName[0]}${lastName[0]}
+  //           `);
   // });
 
   $("#sidebar").hover(function () {

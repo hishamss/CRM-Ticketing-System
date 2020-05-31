@@ -10,6 +10,16 @@ p {
   color: #999;
 }
 
+.ticket_Comments {
+  background: #6e7cc5;
+  color: white;
+  border-radius: 1.25rem;
+  padding: 10px;
+  font-weight: bold;
+  opacity: 0.8;
+  height: 47px !important;
+}
+
 a,
 a:hover,
 a:focus {
@@ -22,7 +32,7 @@ a:focus {
   width: 100%;
   height: 1px;
   border-bottom: 1px dashed #ddd;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 i,
@@ -44,7 +54,7 @@ span {
   max-width: 90px;
   background: #7a6eb8;
   color: #fff;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 #sidebar.active {
@@ -69,14 +79,33 @@ span {
   display: block;
 } */
 
-#sidebar.active #jobTitle,
-#sidebar.active h3 {
+#sidebar.active #jobTitle {
   text-transform: uppercase;
 }
 
 #sidebar.active .sidebar-header strong {
   display: none;
 }
+
+.activate {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.ticketDate {
+  color: #7a6eb8;
+  opacity: 0.5;
+}
+
+.smallTicketText {
+  color: #534366;
+  font-weight: bold;
+}
+
+/* .big_ticket_sec {
+  position: fixed !important;
+  right: 0;
+  /* transition: width 0.3s; */
 
 #sidebar ul li a i {
   text-align: center;
@@ -112,7 +141,8 @@ span {
 } */
 
 #sidebar .sidebar-header {
-  padding: 40%;
+  padding-top: 40%;
+  padding-bottom: 40%;
   background: #5b528a;
   margin-bottom: 3%;
 }
@@ -177,6 +207,15 @@ span {
   font-size: large;
 }
 
+#sidebar .media {
+  margin-top: 30%;
+  margin-bottom: 20%;
+}
+
+#sidebar.active .media {
+  margin-top: 4%;
+  margin-bottom: 2%;
+}
 /* ---------------------------------------------------
     LOGIN & ADMIN STYLE
 ----------------------------------------------------- */
@@ -296,39 +335,10 @@ label:focus input::placeholder {
   display: block;
 }
 
-/* #checkBox {
-  top: 5rem;
-  left: 2rem;
-  position: relative;
-} */
-/* 
-#ready {
-  padding: 20%;
-  background-color: red;
-  border-radius: 50%;
-  width: fit-content;
-  text-transform: uppercase;
-  font-size: 1.8em;
-}  */
-
-/* #modalDot {
-  padding: 6%;
-  justify-content: center;
-  background-color: red;
-  border-radius: 50%;
-  margin-right: 40%;
-  margin-left: 40%;
-} */
-
 .call-modal {
   background-color: #7a6eb8;
   border: none;
 }
-/* 
-.create-modal {
-  border: none;
-  background-color: #d1d1d1;
-} */
 
 .modal-header,
 .modal-footer {
@@ -351,6 +361,7 @@ label:focus input::placeholder {
   font-weight: bold;
   font-size: 16px;
   margin-right: 4%;
+  text-transform: uppercase;
 }
 
 .ticketAv {
@@ -418,12 +429,33 @@ label:focus input::placeholder {
   /* height: 125px; */
 }
 
-#sidebar .media {
-  margin-top: 30%;
-  margin-bottom: 20%;
+.table td {
+  vertical-align: middle;
 }
 
-#sidebar.active .media {
-  margin-top: 4%;
-  margin-bottom: 2%;
+.upperCase::first-letter {
+  text-transform: uppercase;
+}
+
+#welcomeBack {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  background-color: #7a6eb8;
+}
+
+.clock {
+  background: #43ccc9;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 2%;
+  font-size: xx-large;
+}
+
+.list-group-item {
+  border: none;
+}
+
+#day {
+  font-weight: 700;
 }

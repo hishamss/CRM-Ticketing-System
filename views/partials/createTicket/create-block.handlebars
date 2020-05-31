@@ -1,33 +1,50 @@
-<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade Ticket_form" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content create-modal">
             <div class="modal-header text-dark">
-                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h1 class="modal-title display-4" id="exampleModalLabel" style="color: #7a6eb8;">
+                    <u style="font-weight:900">New
+                        Ticket</u> </h1>
+                <button type="button" class="close close_ticket" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <hr>
+
             <div class="modal-body">
                 <form>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Select Customer</label>
+                        </div>
+                        <select class="custom-select" id="emailOptions">
+                            <option selected>Choose...</option>
+
+                        </select>
+                    </div>
+
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label text-dark">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name" disabled>
+                        <label for="ticket-title" class="col-form-label text-dark">Ticket Title:</label>
+                        <input type="text" class="form-control" id="ticket-title">
                     </div>
                     <div class="form-group">
-                        <label for="recipient-title" class="col-form-label text-dark">Title:</label>
-                        <input type="text" class="form-control" id="recipient-title">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label text-dark">Message:</label>
-                        <textarea class="form-control" rows="7"></textarea>
+                        <label for="ticket-text" class="col-form-label text-dark">Ticket Body:</label>
+                        <textarea class="form-control" rows="7" id="ticket-text"></textarea>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-outline-dark">Send message</button>
+                <div class="mt-2">
+                    <p id="ticketmsg" style="color:red; font-weight:600"></p>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-outline-info" id="NewTicket">Send Ticket</button>
+                    <button type="button" class="btn btn-outline-secondary close_ticket"
+                        data-dismiss="modal">Close</button>
+
+                </div>
+
             </div>
         </div>
     </div>
